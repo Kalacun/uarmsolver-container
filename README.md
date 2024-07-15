@@ -1,7 +1,7 @@
 
 # uarmsolver-container
 
-This repository contains a Docker container setup for running `uARMSolver`.
+This repository contains a Docker container setup for running [uARMSolver](https://github.com/firefly-cpp/uARMSolver).
 
 ## Building the Docker Image
 
