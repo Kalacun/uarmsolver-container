@@ -1,9 +1,17 @@
+<h1 align="center">
+    uarmsolver-container
+</h1>
 
-# uarmsolver-container
+<p align="center">
+    <a href="#-build">🔨 Build</a> •
+    <a href="#-output">📂 Output</a> •
+    <a href="#-run-container">🚀 Run Container</a> •
+    <a href="#-access-output">🔓 Access Output</a>
+</p>
 
 This repository contains a Docker container setup for running [uARMSolver](https://github.com/firefly-cpp/uARMSolver).
 
-## Building the Docker Image
+## 🔨 Build
 
 To build the Docker image, run the following command:
 
@@ -11,7 +19,7 @@ To build the Docker image, run the following command:
 docker build -t uarmsolver-container .
 ```
 
-## Preparing the Output Directory
+## 📂 Output
 
 Ensure you have an `output` directory to store the results if you want to generate `rules.txt` to the local machine. Create it using the following command:
 
@@ -19,9 +27,9 @@ Ensure you have an `output` directory to store the results if you want to genera
 mkdir -p output
 ```
 
-## Running the Docker Container
+## 🚀 Run Container
 
-### Option 1: Generating `rules.txt` to Local Machine
+### Output on local machine
 
 Run the Docker container with the following command, which mounts the local `output` directory to the container:
 
@@ -31,7 +39,7 @@ docker run -v $(pwd)/output:/mnt/output -it uarmsolver-container
 
 This command will execute `uARMSolver` and store the generated `rules.txt` file in the `output` directory on your local machine.
 
-### Option 2: Running Without Generating `rules.txt` to Local Machine
+### Output inside the container
 
 Run the Docker container without mapping any local directory:
 
@@ -41,9 +49,9 @@ docker run -it uarmsolver-container
 
 This command will execute `uARMSolver` inside the container, and the files will remain within the container.
 
-## Accessing the Output
+## 🔓 Access Output
 
-### When Generating `rules.txt` to Local Machine
+### Output on local machine
 
 After running the container, you can access the `rules.txt` file in the `output` directory:
 
@@ -52,7 +60,7 @@ ls output
 cat output/rules.txt
 ```
 
-### When Running Without Generating `rules.txt` to Local Machine
+### Output inside the container
 
 If you need to inspect the output files inside the container, you can run the container with an interactive shell:
 
