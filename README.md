@@ -47,7 +47,7 @@ Or run Singularity image:
 singularity exec uarmsolver.sif uARMSolver -s /var/uarmsolver/arm.set
 mv rules.txt output
 ```
-(Recommended use in batch scripts on HPC)\\
+(Recommended use in batch scripts on HPC) <br/>
 These commands will execute `uARMSolver` and store the generated `rules.txt` file in the `output` directory on your local machine.
 
 ### Output inside the container
