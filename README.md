@@ -18,6 +18,12 @@ To build the Docker image, run the following command:
 ```sh
 docker build -t uarmsolver-container .
 ```
+Alternatively, to build Singularity (or Apptainer) .sif image from Dockerfile:
+```sh
+docker save uarmsolver-container:latest -o uarmsolver.tar
+sudo singularity build uarmsolver.sif docker-archive://uarmsolver.tar
+```
+Or simply use uarmsolver.sif file included (may not be up to date)
 
 ## 📂 Output
 
@@ -36,7 +42,12 @@ Run the Docker container with the following command, which mounts the local `out
 ```sh
 docker run -v $(pwd)/output:/mnt/output -it uarmsolver-container
 ```
-
+Or run Singularity image:
+```sh
+singularity exec uarmsolver.sif uARMSolver -s /var/uarmsolver/arm.set
+mv rules.txt output
+```
+(Recommended use in batch scripts on HPC)
 This command will execute `uARMSolver` and store the generated `rules.txt` file in the `output` directory on your local machine.
 
 ### Output inside the container
